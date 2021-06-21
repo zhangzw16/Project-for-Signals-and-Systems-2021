@@ -1,4 +1,4 @@
-rootFolder="/Users/zhangzhenwei/Downloads/met"
+rootFolder="/Users/zhangzhenwei/Downloads/met" # !change this to your own path!
 
 rm videos.txt
 touch videos.txt

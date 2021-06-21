@@ -11,7 +11,7 @@ If FFmpeg is not installed, you can follow the instructions [here](https://ffmpe
 ## Usage
 * For MacOS and Linux
 
-    - 在input.txt中按顺序输入需要合并的视频片段名称。例如，想要按照顺序合并`3.mp4`,`1.mp4`,`8.mp4`，此时input.txt中的内容应该为
+    - 修改视频合并顺序。在input.txt中按顺序输入需要合并的视频片段名称。例如，想要按照顺序合并`3.mp4`,`1.mp4`,`8.mp4`，此时input.txt中的内容应该为
 
         ``` text
         3
@@ -19,7 +19,9 @@ If FFmpeg is not installed, you can follow the instructions [here](https://ffmpe
         8
         ```
 
-    - 运行脚本`merge.sh`
+    - 修改视频地址路径。在`merge.sh`第一行中修改视频以及音频文件夹路径（该路径应该包括所有的视频序列以及`test.wav`背景音乐）。
+
+    - 运行脚本`merge.sh`。
 
         ```
         sh merge.sh
