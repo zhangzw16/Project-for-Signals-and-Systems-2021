@@ -59,7 +59,9 @@ If FFmpeg is not installed, you can follow the instructions [here](https://ffmpe
 
 * For Windows
 
-    首先下载[Git](https://git-scm.com/downloads)
+    <font color='red'>注意！！！Windows中txt文件默认换行方式为CRLF，请将input.txt的换行方式修改为LF否则会出错</font>
+
+    下载[Git](https://git-scm.com/downloads)
 
     1. [【脚本1】 ](scripts/merge.sh)
 
