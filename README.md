@@ -62,26 +62,42 @@ If FFmpeg is not installed, you can follow the instructions [here](https://ffmpe
     首先下载[Git](https://git-scm.com/downloads)
 
     1. [【脚本1】 ](scripts/merge.sh)
-        - 修改视频合并顺序。在input.txt中按顺序输入需要合并的视频片段名称。例如，想要按照顺序合并`3.mp4`,`1.mp4`,`8.mp4`，此时input.txt中的内容应该为
+
+        - 修改视频合并顺序。在[input.txt](input/input.txt)中按顺序输入需要合并的视频片段名称。例如，想要按照顺序合并`3.mp4`,`1.mp4`,`8.mp4`，此时input.txt中的内容应该为
 
             ``` text
             3
             1
             8
             ```
-        
-        - 修改视频地址路径。在`merge.sh`第一行中修改视频以及音频文件夹路径（该路径应该包括所有的视频序列以及`test.wav`背景音乐）。
 
-        - 在Git Bash中运行脚本`merge.sh`。
+        - 修改视频地址路径。在[merge.sh](scripts/merge.sh)第一行中修改视频以及音频文件夹路径（该路径应该包括所有的视频序列以及`test.wav`背景音乐）。<font color='red'>注意Windows路径应更改为形如"D:\met/met1"的形式，其中除D:\中的\外,\全部改为/。以及请不要将素材文件放在c盘目录下。</font>
+
+        - 运行脚本`merge.sh`。
 
             ```
-            sh merge.sh
+            bash scripts/merge.sh
             ```
-        会生成两个文件，`result.mp4`是合并后的视频文件，`result_bgm.mp4`是合并以及添加BGM后的视频文件。
+        会生成两个文件，`out/result.mp4`是合并后的视频文件，`out/result_bgm.mp4`是合并以及添加BGM后的视频文件。
 
     2. [【脚本2】 ](scripts/merge_time.sh)
 
-        - TODO ..
+        - 修改视频合并顺序，以及每个视频的开始和结束时间。在[input_time.txt](input/input_time.txt)中按顺序输入需要合并的视频片段名称，以及视频的开始和结束时间，中间用空格隔开，每个视频片段占一行。例如，想要按照顺序合并`3.mp4`,`1.mp4`,`8.mp4`，`1.mp4`对应的开始时间和结束时间为1s-3s。此时input.txt中的内容应该为
+
+            ``` text
+            3 1.5:2.5  # 3.mp4的第1.5s至第2.5s放在拼接后视频的第1段
+            1 1:3      # 1.mp4的第1s至第3s放在拼接后视频的第2段
+            8 0:4      # 8.mp4的第0s至第4s放在拼接后视频的第3段
+            ```
+
+        - 修改视频地址路径。在[merge.sh](scripts/merge_time.sh)第一行中修改视频以及音频文件夹路径（该路径应该包括所有的视频序列以及`test.wav`背景音乐）。<font color='red'>注意Windows路径应更改为形如"D:\met/met1"的形式，其中除D:\中的\外,\全部改为/。以及请不要将素材文件放在c盘目录下。</font>
+
+        - 运行脚本`merge.sh`。
+
+            ```
+            bash scripts/merge_time.sh
+            ```
+        会生成两个文件，`out/result.mp4`是合并后的视频文件，`out/result_bgm.mp4`是合并以及添加BGM后的视频文件。
 
 ## Acknowledgement
 - [FFmpeg](https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&ved=2ahUKEwi-s5SmupHwAhXIFogKHclNCNAQFjAAegQIBxAD&url=https%3A%2F%2Fwww.ffmpeg.org%2F&usg=AOvVaw09zXstjq6AgcEKkXkTNIzA)
